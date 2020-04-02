@@ -1,0 +1,62 @@
+body {
+  background-image: url("noaa-Y7GUOQ83OMg-unsplash.jpg");
+  background-size: cover;
+}
+
+#container, #nav, #header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+#container {
+  color: white;
+  width: 500px;
+  background: #020024;
+  background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(35%, #090979), to(#00d4ff));
+  background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+}
+
+#input {
+  width: 400px;
+}
+
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+@media only screen and (max-width: 600px) {
+  #container {
+    width: 100%;
+  }
+  #input {
+    width: 100%;
+  }
+  #search {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto;
+  }
+  body {
+    background-image: url("noaa-Y7GUOQ83OMg-unsplash.jpg");
+    background-size: cover;
+  }
+}
+/*# sourceMappingURL=weatherchannelstyles.css.map */
