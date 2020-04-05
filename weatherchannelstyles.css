@@ -5,7 +5,7 @@ body {
   font-family: 'Sen', sans-serif;
 }
 
-#container, #nav, #header, #weather_container, #country, #wicon {
+#container, #nav, #icon, #description, #header, #weather_container, #country, #wicon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,8 +27,19 @@ body {
   background: transparent;
 }
 
+#icon {
+  color: white;
+  margin-top: 20px;
+}
+
+#description {
+  font-size: 15px;
+  color: white;
+}
+
 #main-header {
   font-size: 5vw;
+  color: white;
 }
 
 #input {

@@ -16,8 +16,16 @@ body{
   #nav{@extend %centrar;
     background: transparent;
 }
+#icon{@extend %centrar;
+color: white;
+margin-top: 20px;
+}
+#description{@extend %centrar;
+  font-size:15px;
+color: white;}
 #main-header{
   font-size: 5vw;
+  color: white;
 }
   #input{width: 40vw;
   font-size:1.5vw;

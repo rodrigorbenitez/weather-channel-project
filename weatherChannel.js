@@ -1,3 +1,4 @@
+//-----------------------init function checking IP adress and dislpay-----------------//
 $.ajax({
   method: 'GET',
   url: 'http://api.ipstack.com/check?access_key=3bbfe95ac22f81c7dc94c445060d239d',
@@ -12,19 +13,16 @@ $.ajax({
      $("#tact").prepend(parseInt(data.main.temp, 10))
      $("#tmax").append(parseInt(data.main.temp_max,10)+" °C")
      $("#tmin").append(parseInt(data.main.temp_min,10)+" °C")
-     $('#wicon').attr('src', "http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png");
+     suffix=data.weather[0].icon
+     classicon="owf owf-"+data.weather[0].id+"-"+suffix[2]+" owf-5x"
+     $("i").addClass(classicon);
+     description=data.weather[0].description;
+     $("#description").text(description[0].toUpperCase()+description.slice(1));
  console.log(data)
     }, error:  function(){
       $("#container").append("<p>Sorry not found</p>")}
-
-  })
-
-
-
-
-  }
-})
-
+ })}})
+ //--------click button function-------------//
 $("#search").on("click",function() {
   var pais = $("#input").val();
   pais=encodeURI(pais)
@@ -42,13 +40,20 @@ $("#search").on("click",function() {
         $("#tmax").append(parseInt(data.main.temp_max,10)+" °C")
         $("#tmin").append(parseInt(data.main.temp_min,10)+" °C")
         $('#wicon').attr('src', "http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png");
-   console.log(data)
-   $("#country").html("<div id='header'><h4 id='country'>"+data.name+", "+data.sys.country+" </h4><img id='flag' style='margin-left: 10px;' src='https://www.countryflags.io/"+data.sys.country+"/shiny/32.png'></div>")
-      }, error:  function(){
+        console.log(data)
+       $("#country").html("<div id='header'><h4 id='country'>"+data.name+", "+data.sys.country+" </h4><img id='flag' style='margin-left: 10px;' src='https://www.countryflags.io/"+data.sys.country+"/shiny/32.png'></div>")
+       suffix=data.weather[0].icon
+       classicon="owf owf-"+data.weather[0].id+"-"+suffix[2]+" owf-5x"
+       $("i").remove();
+       $("#icon").html("<i class='"+classicon+"'></i>");
+       description=data.weather[0].description;
+       $("#description").text(description[0].toUpperCase()+description.slice(1));
+    }, error:  function(){
         $("#container").append("<p>Sorry not found</p>")}
 
     })
 })
+//----------------------enter key press function--------------------//
 $("form").keypress(function(e) {
   //Enter key
   if (e.which == 13) {
@@ -76,7 +81,13 @@ $("input").keypress(function(e) {
           $('#wicon').attr('src', "http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png");
      console.log(data)
      $("#country").html("<div id='header'><h4 id='country'>"+data.name+", "+data.sys.country+" </h4><img id='flag' style='margin-left: 10px;' src='https://www.countryflags.io/"+data.sys.country+"/shiny/32.png'></div>")
-          }, error:  function(){
+          suffix=data.weather[0].icon
+          classicon="owf owf-"+data.weather[0].id+"-"+suffix[2]+" owf-5x"
+          $("i").remove();
+          $("#icon").html("<i class='"+classicon+"'></i>");
+          description=data.weather[0].description;
+         $("#description").text(description[0].toUpperCase()+description.slice(1));
+    }, error:  function(){
         
           $("#container").append("<p>Sorry not found</p>")}
   
