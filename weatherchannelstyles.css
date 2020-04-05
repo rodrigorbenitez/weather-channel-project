@@ -1,9 +1,11 @@
 body {
   background-image: url("noaa-Y7GUOQ83OMg-unsplash.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Sen', sans-serif;
 }
 
-#container, #nav, #header {
+#container, #nav, #header, #weather_container, #country, #wicon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,45 +20,118 @@ body {
 
 #container {
   color: white;
-  width: 500px;
-  background: #020024;
-  background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(35%, #090979), to(#00d4ff));
-  background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  width: 50vw;
+}
+
+#nav {
+  background: transparent;
+}
+
+#main-header {
+  font-size: 5vw;
 }
 
 #input {
-  width: 400px;
+  width: 40vw;
+  font-size: 1.5vw;
 }
 
-#map {
-  height: 400px;
-  /* The height is 400 pixels */
-  width: 100%;
-  /* The width is the width of the web page */
+#weather_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#temp_minmax {
+  left: 58%;
+  margin-top: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+#temp_minmax span {
+  font-size: 5vw;
+}
+
+#country {
+  color: white;
+}
+
+#tact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 15vw;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#tmin {
+  text-align: center;
+  border-bottom: 1px solid white;
+  margin: 0 auto;
+  font-size: 2vw;
+}
+
+#tmax {
+  text-align: center;
+  font-size: 2vw;
+  margin-bottom: 60%;
+}
+
+#search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2px auto;
+  font-size: 1.5vw;
 }
 
 @media only screen and (max-width: 600px) {
   #container {
     width: 100%;
   }
+  #tact {
+    font-size: 90px;
+  }
+  #tmin {
+    font-size: 12px;
+  }
+  #tmax {
+    font-size: 12px;
+  }
+  #temp_minmax > span {
+    font-size: 30px;
+  }
+  #main-header {
+    display: none;
+  }
   #input {
-    width: 100%;
+    width: 240.39px;
+    content: "write city name";
+    font-size: 15px;
   }
   #search {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 0 auto;
+    font-size: 15px;
+    margin-left: 10px;
   }
   body {
     background-image: url("noaa-Y7GUOQ83OMg-unsplash.jpg");
-    background-size: cover;
+    background-size: auto;
+    background-repeat: no-repeat;
   }
 }
 /*# sourceMappingURL=weatherchannelstyles.css.map */

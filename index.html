@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="weatherchannelstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
     <title>Weather Channel</title>
 </head>
 <body>
+    <h1 id="main-header">What's the weather like today?</h1>
     <div>
-    <nav class="navbar navbar-light bg-light" id="nav">
+    <nav class="navbar" id="nav">
         <form class="form-inline">
-          <input class="form-control mr-sm-2"  type="text" placeholder="write city name, state or country code" aria-label="Search" id="input">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="search">Search</button>
+          <input class="form-control mr-sm-2"  type="text" placeholder="City name, state or country code" aria-label="Search" id="input">
+          <button class="btn btn-primary" type="button" id="search">Search</button>
         </form>
       </nav></div>
+    <div id="country"></div>
+    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
     <div id="container">
-        <ul>
-            <li id="1">Temperatura actual: <span></span></li>
-            <li id="2">Temperatura máxima: <span></span></li>
-            <li id="3">Temperatura mínima: <span></span></li>
-            <li id="4">Descripción de las condiciones actuales: <span></span></li>
-            <li id="5">Velocidad del viento: <span></span></li>
-        </ul>
+        <div id="spinner"></div>
+          <div id="temp_actual"><h1 id="tact"></h1></div><div id="temp_minmax">
+            <span>°C</span> 
+            <h6 id="tmin"></h6>
+            <h6 id="tmax"></h6>
+            </div>
+        
     </div>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="weatherChannel.js"  ></script>    
+<script src="weatherChannel.js"></script>    
 </body>
 </html>

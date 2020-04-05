@@ -1,6 +1,8 @@
 body{
     background-image: url("noaa-Y7GUOQ83OMg-unsplash.jpg");
     background-size: cover;
+    background-repeat: no-repeat; 
+    font-family: 'Sen', sans-serif;
   }
   %centrar{display: flex;
     justify-content: center;
@@ -9,30 +11,75 @@ body{
   }
     #container{@extend %centrar;
     color: white;
-      width: 500px;
-      background: rgb(2,0,36);
-      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+      width: 50vw;
   }
-  #nav{@extend %centrar;}
-  #input{width: 400px;}
+  #nav{@extend %centrar;
+    background: transparent;
+}
+#main-header{
+  font-size: 5vw;
+}
+  #input{width: 40vw;
+  font-size:1.5vw;
+  }
   #header{@extend %centrar;}
-  #map {
-    height: 400px;  /* The height is 400 pixels */
-    width: 100%;  /* The width is the width of the web page */
-   }
-   @media only screen and (max-width: 600px) {
-    #container{
-       
-          width: 100%;
-        
-    }
-    #input{width: 100%;}
+   
+#weather_container{@extend %centrar;display: flex;}
+#temp_minmax{
+  left: 58%;
+  margin-top: 1%;
+  display: flex;
+flex-direction: column;
+text-align: left;
+span{  
+  font-size: 5vw;}
+}
+#country{@extend %centrar;
+  color: white;
+
+}
+#tact{display: flex;
+  font-size: 15vw;
+  align-items: flex-start;
+}
+#tmin{
+  text-align: center;
+  border-bottom: 1px solid white;
+  margin: 0 auto;
+  font-size: 2vw;}
+#tmax{
+  text-align: center;
+  font-size: 2vw;
+  margin-bottom: 60%;
+
+}
+#wicon{@extend %centrar;}
 #search{display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;}
-    body{
-        background-image: url("noaa-Y7GUOQ83OMg-unsplash.jpg");
-        background-size: cover;
-      }
+  justify-content: center;
+  align-items: center;
+  margin: 2px auto;
+  font-size:1.5vw;
+}
+@media only screen and (max-width: 600px) {
+  #container{
+        width: 100%;  
+  }
+  #tact{font-size: 90px;}
+  #tmin{font-size: 12px;}
+  #tmax{font-size: 12px;}
+  #temp_minmax>span{font-size: 30px;}
+  #main-header{
+    display: none;
+  }
+  #input{width: 240.39px;
+    content: "write city name";
+    font-size: 15px;
+  }
+  #search{font-size: 15px;
+    margin-left: 10px;}
+  body{
+      background-image: url("noaa-Y7GUOQ83OMg-unsplash.jpg");
+      background-size: auto;
+      background-repeat: no-repeat; 
+    }
 }
